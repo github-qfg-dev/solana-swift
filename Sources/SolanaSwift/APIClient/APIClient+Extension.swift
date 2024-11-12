@@ -30,11 +30,6 @@ public extension SolanaAPIClient {
         observeSignatureStatus(signature: signature, timeout: 60, delay: 2)
     }
 
-    /// Get fee per signature
-    func getLamportsPerSignature() async throws -> UInt64? {
-        try await getFees(commitment: nil).feeCalculator?.lamportsPerSignature
-    }
-
     /// Convenience method for request(method:params:) with no params
     func request<Entity>(method: String) async throws -> Entity where Entity: Decodable {
         try await request(method: method, params: [])
