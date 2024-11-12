@@ -285,7 +285,7 @@ public protocol SolanaAPIClient {
     /// - Throws: APIClientError
     /// - SeeAlso https://docs.solana.com/developing/clients/jsonrpc-api#getlatestblockhash
     ///
-    func getlatestblockhash(commitment: Commitment?) async throws -> String
+    func getLatestblockhash(commitment: Commitment?) async throws -> String
 
     /// Returns signatures for confirmed transactions that include the given address in their accountKeys list.
     /// Returns signatures backwards in time from the provided signature or most recent confirmed block
@@ -293,7 +293,7 @@ public protocol SolanaAPIClient {
     ///  - address: account address as base-58 encoded string
     ///  - configs: (optional) Configuration object
     /// - Throws: APIClientError
-    /// - SeeAlso https://docs.solana.com/developing/clients/jsonrpc-api#getlatestblockhash
+    /// - SeeAlso https://docs.solana.com/developing/clients/jsonrpc-api#getsignaturesforaddress
     ///
     func getSignaturesForAddress(address: String, configs: RequestConfiguration?) async throws -> [SignatureInfo]
 
